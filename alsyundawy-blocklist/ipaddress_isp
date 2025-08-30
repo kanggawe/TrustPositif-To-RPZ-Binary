@@ -1,400 +1,1127 @@
-<style type="text/css">
-  .title-angka {
-    font-size: 12px !important;
-}
-.title-angka img {
-    max-width: 32px !important;
-}
-</style>
-
-<!-- PRODUCTION -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link rel="shortcut icon" href="https://trustpositif.komdigi.go.id/assets/images/image2_ouC_icon.ico">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://trustpositif.komdigi.go.id/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://trustpositif.komdigi.go.id/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="https://trustpositif.komdigi.go.id/assets/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://trustpositif.komdigi.go.id/assets/css/style.css">
-    <link rel="stylesheet" href="https://trustpositif.komdigi.go.id/assets/css/all.css">
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeEuTUqAAAAAA7DTOhIAzGkwdBRS6wGQOB2r1xV"></script>
-
-    <title>TrustPositif</title>
-    <style type="text/css">
-.update-terakhir {
-    background: #3f51b5!important;
-        border-radius: 10px;
-}
-.top-small-nav {
-    background: #2196F3!important;
-}
-.navbar1 {
-    background: #253c80!important;
-}
-.title-angka img {
-    background: #102d7c;
-}
-.jumlah-terakhir {
-    color: #c3c3c3;
-}
-.btn-secondary {
-    color: #fff;
-    background-color: #3f51b5;
-    border-color: #3f51b5;
-}
-.overview {
-    color: #3f51b5;
-    background: #3f51b5 !important;
-        border-radius: 10px;
-}
-.coco-bg {
-    background: #3f51b5;
-}
-.text-tentang > h5 {
-    font-weight: 500;
-    color: var(--white);
-    padding-top: 12px;
-}
-footer .pd-top {
-    background: #253c7f;
-}
-footer .container-fluid {
-    border: 0px solid #eaedf5;
-}
-
-.modal-header {
-    background: #2196F3!important;
-}
-
-
-    </style>
-  </head>
-  <body>
-
-<div class="container-fluid">
-<div class="col-sm-12 top-small-nav"><img src="https://trustpositif.komdigi.go.id/assets/images/id.png" alt="trustpositif"> TRUST+™ Positif, Internet Sehat dan Aman</div>
-<nav class="navbar navbar-expand-lg navbar1">
-  <a class="navbar-brand" href="#" hidden="hidden">Trustpositif</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"><img src="https://trustpositif.komdigi.go.id/assets/images/menu.png">  Menu</span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a id="beranda" class="nav-link" href="https://trustpositif.komdigi.go.id/">Beranda <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://aduankonten.id/" target="blank">Aduan Konten</a>
-      </li>
-      <li class="nav-item">
-        <a id="tentang" class="nav-link" href="https://trustpositif.komdigi.go.id/Tentang">Tentang Kami</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-</div><div class="container body images-index">
-    <div class="col-sm-12 text-center logo d-none d-sm-block">
-<img class="icon_kominfo img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/komdigi.png" alt="trustpositif">
-	<img class="icon_ais img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/cyberdrone.jpeg" alt="trustpositif">
-	<img class="icon_aduan img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/aduan_.png" alt="trustpositif">
-   </div>
-
- <div class="col-sm-12 text-center logo d-block d-sm-none ">
-<img class="icon_kominfo img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/komdigi.png" alt="trustpositif" style="max-width: 57px;">
-	<img class="icon_ais img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/cyberdrone.jpeg" alt="trustpositif" style="max-width: 110px;">
-	<img class="icon_aduan img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/aduan_.png" alt="trustpositif" style="max-width: 72px;">
-   </div>
- <div class=""></div>
-   <div class="col-sm-12 keterangan">
-     <p>Isilah Domain/URL/Keyword yang ingin Anda cari pada kolom isian di bawah, cukup 1 bagian kata saja, misalkan: ‘domainsaya.com’. Kemudian klik ‘CARI DATA’ untuk melakukan pencarian. Anda tidak perlu menyertakan ‘http://’ pada awal kata pencarian ataupun trailing slash ‘/’ pada akhir kata pencarian.</p>
-   </div>
-   <div class="col-sm-12 home-table">
-      <div class="input-group mb-3 input-group-lg">
-         <input type="text" class="form-control cari" placeholder="Cari Data Pemblokiran Trustpositif" id="press-to-modal" readonly="readonly">
-         <div class="input-group-append">
-         </div>
-      </div>
-      <div class="table-responsive">
-  <span style="display: none" id="show_loading">
-        <div class="d-flex justify-content-center" id="spinloading">
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
-         </div>
-      </span>
-      
-                   </table>
- 
-      </div>
-      <p>
-        
-      </p>
-   </div>
-  <div class="row">
-  <div class="col-sm-12 container-button">
-    <a class="btn-info" href="https://trustpositif.kominfo.go.id/normalisasi" target="_blank">
-     <button type="button" class="btn btn-info" style="background-color:#86CC2D;border-color: #86CC2D;"> PENGAJUAN NORMALISASI</button>
-     </a>
-   </div>
-   <div class="col-sm-12 container-button">
-    <a class="btn-info" href="https://trustpositif.komdigi.go.id/pdfhoaks">
-     <button type="button" class="btn btn-info"> <img src="https://trustpositif.komdigi.go.id/assets/images/interface.png"> Download Data Hoaks Terbaru</button>
-     </a>
-   </div>
-   <div class="col-sm-12 container-button">
-      <a class="btn-info" href="https://trustpositif.komdigi.go.id/assets/db/domains">
-       <button type="button" class="btn btn-secondary">  <img src="https://trustpositif.komdigi.go.id/assets/images/data-transfer-download-3x.png"> Download Blacklist TrustPositif</button>
-       </a>
-   </div>
-      
-   <div class="col-sm-12 text-center logo d-sm-block no_koripsi">
-      <img class="icon_ais img-fluid" src="https://trustpositif.komdigi.go.id/assets/images/No-Korupsi-01.png" alt="trustpositif" style="max-width: 184px;">
-   </div>
-
-</div>
-</div>
-
-</div>
- <style type="text/css">
-    #input-data {
-    height: 350px;
-    overflow-x: auto;
-}
-  </style>
-
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal-search" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title" id="text-title"></h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <p></p>
-        </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-         <div class="col-sm-12">
-         	<div id="caridata">
-           <form id="domain" method="GET" action="https://trustpositif.komdigi.go.id/welcome" >
-           <input type="hidden" name="csrf_token" value="8ef79d1b42bca1e303e6efaca468c4b3" style="display: none">
-           <input type="hidden" name="recaptcha_token" id="recaptchaToken">
-	         	<div class="form-group">
-				  <label for="comment"></label>
-				  <textarea  class="form-control inputarea" rows="5" id="input-data" placeholder="Contoh pencarian yang benar: namadomain.tld
-Contoh pencarian yang salah: subdomain.namadomain.tld atau subdomain.namadomain.tld
-Maksimal Pencarian 5 url
-          " name="domains"></textarea>
-				</div>
-
-			</div>
-			<div id="shadata">
-				<div class="form-group append" id="append">
-						
-					</div>
-			</div>
-         </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" id="text-footer1"> Cari
-          </button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  
-  <script>
-        document.getElementById('domain').addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah pengiriman form otomatis
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LeEuTUqAAAAAA7DTOhIAzGkwdBRS6wGQOB2r1xV', {action: 'submit'}).then(function(token) {
-                    document.getElementById('recaptchaToken').value = token;
-                    document.getElementById('domain').submit(); // Kirim form setelah mendapatkan token
-                });
-            });
-        });
-    </script> 
-<footer class="footer">
- <div class="container">          
-<!-- Footer -->
-    
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
-                    <!-- Grid row -->
-          <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-5 mt-md-0 mt-3 sistem">
-                <div class="col-sm-12" style="margin-top:5%;">
-                <span class="d-none d-sm-block">
-                  <img src="https://trustpositif.komdigi.go.id/assets/images/white_komdigi.png"> <br>
-
-                </span>
-                <span class="d-block d-sm-none">
-                  <img src="https://trustpositif.komdigi.go.id/assets/images/white_komdigi.png">
-                  <br>
-                </span>
-              </div>
-
-              <!-- Content -->
-      <!--         <h5 class="text-uppercase">SISTEM ADUAN KONTEN</h5>
-                <p>Kami sangat mengundang Anda untuk berpartisipasi dalam pengembangan database <br>TRUST+™ Positif yang saat ini telah terkaji. Anda dapat berpartisipasi langsung dengan cara mengisi Formulir Pengaduan yang ada, atau dengan mengirimkan informasi ke: aduankonten@kominfo.go.id </p> -->
-            </div>
-            <!-- Grid column -->
-
-           
-
-            <!-- Grid column -->
-            <div class="col-md-2 mb-md-0 mb-3 link">
-
-              <!-- Links -->
-              <h5 class="text-uppercase" style="color:#ed8c2b !important">Links</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                 <a  href="index.php">Beranda <span class="sr-only">(current)</span></a>
-                </li>
-                <li>
-                  <a  href="https://aduankonten.id/" target="blank">Aduan Konten</a>
-                </li>
-                <li>
-                  <a href="tentang.php">Tentang Kami</a>
-                </li>
-              </ul>
-
-            </div>
-
-
-            <!-- Grid column -->
-            <div class="col-md-4 mb-md-0 mb-3 kontak">
-
-              <!-- Links -->
-              <h5 class="text-uppercase" style="color: #ed8c2b !important">Kontak</h5>
-
-              <ul class="list-unstyled">
-                <li>
-                  Telepon: +62 21 3845786
-                </li>
-                <li>
-                  <a href="https://api.whatsapp.com/send?phone=+628119224545">Whatsapp: +62 8119224545</a>
-                </li>
-                <li>
-                   <a href="mailto:aduankonten@kominfo.go.id">Email: aduankonten@kominfo.go.id </a>
-                </li>
-                <li>
-                  Jalan Medan Merdeka Barat No.9 Jakarta Pusat
-                </li>
-              </ul>
-
-            </div>
-    
-
-          </div>
-          <!-- Grid row -->
-
-
-        </div>
-        <!-- Copyright -->
-      </div>
-    </footer>
-
-<!-- Footer -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://trustpositif.komdigi.go.id/assets/js/jquery.min.js"></script>   
-    <script src="https://trustpositif.komdigi.go.id/assets/js/bootstrap.min.js"></script>
-    <script src="https://trustpositif.komdigi.go.id/assets/js/jquery.dataTables.min.js"></script>
-    <script src="https://trustpositif.komdigi.go.id/assets/js/dataTables.bootstrap4.min.js"></script>
-  </body>
-</html>
-<script type="text/javascript">
-var urls = "https://trustpositif.komdigi.go.id/";
-var base_url = window.location.origin
-$(document).ready(function(){
-       $.ajax({
-              method:'GET',
-              type:'ajax',
-              url:base_url + '/Rest_server/gettotalrecordsperkategori',
-              dataType:'json',
-              success: function(data){
-                var obj = data;
-                console.log(obj);
-                var objPornografi = obj[0].TotalPornografi;
-                var objRadikalisme = obj[0].TotalRadikalisme;
-                var objSarah = obj[0].TotalSARA;
-                var objKekerasan = obj[0].TotalKekerasan;
-                var objPornoanak = obj[0].TotalKekerasanPornografiAnak;
-                var objPerjudian = obj[0].TotalPerjudian;
-                var objNormalisasi = obj[0].TotalRadikalisme;
-                var objTotalInvestasiIlegal = obj[0].TotalInvestasiIlegal;
-                var objTotalFitnah = obj[0].TotalFitnah;
-                var objTotalPenipuanOnline = obj[0].TotalPenipuanOnline;
-                var objTotalHKI = obj[0].TotalHKI;
-                var objTotalPelanggaranKeamananInformasi = obj[0].TotalPelanggaranKeamananInformasi;
-                var objTotalPelanggaranUUITE = obj[0].TotalPelanggaranUUITE;
-                var objTotalPerdaganganProdukAturanKhusus = obj[0].TotalPerdaganganProdukAturanKhusus;
-                var objInstansiSektor = obj[0].TotalKontenNegatifDirekomendasikanInstansiSektor;
-                var objTotalKontenMeresahkanMasyarakat = obj[0].TotalKontenMeresahkanMasyarakat;
-                var objTotalSeparatisme = obj[0].TotalSeparatisme;
-                var objLastDate = obj[0].lastdate;
-                var objmelanggar_nilai_sosia = obj[0].TotalKontenMelanggarNilaiSosialBudaya;
-                var objTotalHOAKS= obj[0].TotalHOAKS;
-                var objTotalPemerasan= obj[0].TotalPemerasan;
-                var objTotalKontenMemfasilitasiKontenNegatif= obj[0].TotalKontenMemfasilitasiKontenNegatif;
-                
-                // html 
-                $('#pornografi').text(objPornografi);
-                $('#radikal').text(objRadikalisme);
-                $('#sarah').text(objSarah);
-                $('#kekerasan').text(objKekerasan);
-                $('#porn_anak').text(objPornoanak);
-                $('#perjudian').text(objPerjudian);
-                $('#normalisasi').text(objNormalisasi);
-                $('#investasi').text(objTotalInvestasiIlegal);
-                $('#fitnah').text(objTotalFitnah);
-                $('#penipuan_online').text(objTotalPenipuanOnline);
-                $('#hki').text(objTotalHKI);
-                $('#keamanan_informasi').text(objTotalPelanggaranKeamananInformasi);
-                $('#uu_ite').text(objTotalPelanggaranUUITE);
-                $('#produk_aturan_khusus').text(objTotalPerdaganganProdukAturanKhusus);
-                $('#instansi_sektor').text(objInstansiSektor);
-                $('#meresahkan_masyarakat').text(objTotalKontenMeresahkanMasyarakat);
-                $('#organisasi_berbahaya').text(objTotalSeparatisme);
-                $('#lastupdate').text(objLastDate);
-                $('#melanggar_nilai_sosial').text(objmelanggar_nilai_sosia);
-                $('#total_hoaks').text(objTotalHOAKS);
-                $('#total_pemerasan').text(objTotalPemerasan);
-                $('#konten_memfasilitasi_konten_negatif').text(objTotalKontenMemfasilitasiKontenNegatif);
-
-                
-
-              },
-              error: function(){
-                console.log('Error');
-              }
-          });
-    });
-
-  $('#text-footer').on('click', function(){
-    $('#daftar-block').show();
-     $('#show_loading').show();
-    var txt = $.trim($("#input-data").val());
-    var passhtml = '';
-      $.ajax({
-              method:'POST',
-              type:'ajax',
-              dataType: 'json',
-              url:base_url + '/Rest_server/getrecordsname_home',
-              data:{ 'csrf_t8.199.105.13
+103.105.48.16
+103.105.49.236
+103.194.170.153
+103.194.170.154
+104.149.91.30
+104.248.148.185
+107.178.81.181
+111.90.150.182
+111.90.159.150
+111.90.159.194
+128.199.13.69
+128.199.141.28
+128.199.174.22
+128.199.175.251
+128.199.182.225
+128.199.198.249
+128.199.208.193
+128.199.66.55
+128.199.74.80
+128.199.77.40
+128.199.79.152
+128.199.98.92
+13.212.76.161
+135.148.164.91
+138.68.19.218
+139.180.220.132
+139.59.223.160
+139.59.235.104
+139.59.244.167
+139.99.119.238
+139.99.24.153
+139.99.33.196
+139.99.33.201
+139.99.33.203
+139.99.33.205
+139.99.33.207
+139.99.33.208
+139.99.33.213
+139.99.33.221
+139.99.33.222
+139.99.51.105
+139.99.81.160
+144.126.138.140
+144.126.154.75
+144.91.86.150
+148.163.72.80
+149.102.144.7
+149.3.170.155
+154.12.229.9
+154.26.132.73
+154.53.53.172
+157.230.193.154
+159.223.34.146
+159.65.14.133
+159.89.197.195
+159.89.198.98
+159.89.211.137
+159.89.214.26
+159.89.221.2
+161.97.125.183
+161.97.151.42
+161.97.152.70
+161.97.164.214
+161.97.173.188
+161.97.177.108
+161.97.177.90
+162.0.232.86
+162.212.158.115
+162.213.210.114
+163.47.11.150
+164.68.102.111
+164.68.105.199
+164.68.106.135
+164.68.127.15
+167.172.7.155
+167.172.7.64
+167.71.196.69
+167.86.118.203
+167.86.96.60
+167.99.28.101
+167.99.29.11
+167.99.31.83
+167.99.74.239
+167.99.77.72
+169.45.82.140
+173.208.189.242
+173.208.216.250
+173.212.224.160
+173.82.166.10
+173.82.166.11
+173.82.166.13
+173.82.226.155
+178.128.114.78
+178.128.120.60
+178.128.16.105
+178.128.220.28
+178.128.25.172
+178.128.27.131
+178.128.50.13
+178.128.62.5
+178.128.96.53
+18.141.16.3
+185.150.117.129
+185.190.140.76
+185.202.238.201
+185.215.164.126
+185.225.232.26
+185.250.149.60
+185.56.138.69
+185.63.253.200
+185.63.253.76
+185.63.253.81
+185.99.135.216
+188.166.197.213
+188.166.206.49
+188.166.223.3
+188.166.64.6
+192.99.98.76
+193.38.54.77
+194.135.33.203
+194.163.153.227
+194.213.3.47
+194.233.66.232
+194.233.68.211
+194.233.82.137
+194.233.87.209
+194.233.87.224
+198.199.74.44
+198.50.157.48
+198.52.97.131
+198.54.112.76
+199.38.245.239
+206.189.170.14
+206.189.33.151
+206.189.35.193
+207.148.68.215
+207.244.225.48
+207.244.251.54
+209.126.6.6
+209.97.161.160
+209.97.168.40
+209.97.171.113
+212.32.226.234
+216.128.176.220
+216.155.135.144
+23.225.172.117
+31.220.50.253
+38.242.141.169
+38.242.252.18
+38.242.254.53
+45.32.122.145
+45.63.26.157
+45.64.128.31
+45.76.144.150
+45.76.156.105
+45.76.180.49
+45.76.33.4
+45.76.4.41
+45.77.249.128
+45.77.38.159
+45.8.133.196
+45.82.178.128
+45.84.0.60
+45.89.67.165
+5.189.139.229
+5.189.177.176
+51.222.2.11
+51.222.2.12
+51.222.2.14
+51.81.115.210
+51.89.19.196
+52.53.39.128
+54.179.210.125
+54.39.165.146
+62.171.164.179
+62.182.85.191
+64.227.68.117
+66.29.129.111
+66.29.129.121
+66.29.129.126
+66.29.129.161
+66.42.51.211
+66.42.63.20
+66.70.227.115
+66.94.116.38
+66.94.117.172
+68.183.229.32
+68.183.237.173
+68.65.123.84
+74.208.121.241
+75.119.139.200
+75.119.147.12
+75.119.155.196
+78.129.239.97
+80.85.140.251
+84.21.171.195
+92.84.132.251
+93.115.31.155
+93.115.31.157
+93.115.61.56
+95.111.224.11
+95.142.37.205
+96.43.139.235
+96.43.139.237
+101.50.0.160
+101.50.0.83
+101.50.2.173
+101.50.3.119
+101.50.3.9
+103.10.200.49
+103.10.200.52
+103.10.200.62
+103.10.200.64
+103.10.201.24
+103.10.201.29
+103.102.46.165
+103.102.46.188
+103.11.40.1
+103.11.40.2
+103.12.211.176
+103.125.217.161
+103.125.85.237
+103.147.32.85
+103.150.60.112
+103.150.60.114
+103.150.60.118
+103.150.60.163
+103.150.60.166
+103.150.60.37
+103.150.60.70
+103.150.60.71
+103.153.2.152
+103.153.2.205
+103.153.2.216
+103.153.2.40
+103.153.2.54
+103.153.2.95
+103.157.97.12
+103.157.97.142
+103.161.184.161
+103.163.139.123
+103.163.139.13
+103.163.139.214
+103.166.156.165
+103.166.156.185
+103.166.156.7
+103.171.26.152
+103.171.26.173
+103.171.27.130
+103.179.87.113
+103.197.58.101
+103.197.58.102
+103.197.58.108
+103.197.58.120
+103.197.58.122
+103.197.58.59
+103.197.58.73
+103.197.58.77
+103.197.58.91
+103.197.58.99
+103.205.140.56
+103.23.138.132
+103.23.138.136
+103.23.138.137
+103.23.138.143
+103.23.138.148
+103.23.138.152
+103.23.138.153
+103.23.138.160
+103.23.138.181
+103.23.138.184
+103.23.138.188
+103.23.138.194
+103.231.189.63
+103.244.96.133
+103.244.96.134
+103.244.96.136
+103.244.96.137
+103.244.96.138
+103.244.96.139
+103.244.96.140
+103.244.96.142
+103.244.96.143
+103.244.96.144
+103.244.96.145
+103.244.96.151
+103.244.96.152
+103.244.96.154
+103.246.244.170
+103.253.145.110
+103.253.145.165
+103.253.145.175
+103.253.145.225
+103.253.145.66
+103.253.145.74
+103.253.145.8
+103.253.145.85
+103.253.145.92
+103.253.146.114
+103.253.146.169
+103.253.146.17
+103.253.146.19
+103.253.147.105
+103.253.147.225
+103.253.147.50
+103.253.27.153
+103.253.27.176
+103.29.68.16
+103.29.69.164
+103.29.70.136
+103.29.70.139
+103.29.71.128
+103.29.71.150
+103.29.71.225
+103.3.60.176
+103.3.60.177
+103.3.60.204
+103.3.60.97
+103.3.61.104
+103.3.61.180
+103.3.61.181
+103.3.61.206
+103.3.61.213
+103.3.61.218
+103.3.61.22
+103.3.61.223
+103.3.61.238
+103.3.61.52
+103.3.62.143
+103.3.62.153
+103.3.62.215
+103.3.62.242
+103.3.63.120
+103.3.63.208
+103.3.63.245
+103.3.63.39
+103.3.63.94
+103.5.47.10
+103.5.47.109
+103.5.47.11
+103.5.47.111
+103.5.47.12
+103.5.47.13
+103.5.47.14
+103.5.47.15
+103.5.47.16
+103.5.47.17
+103.5.47.18
+103.5.47.19
+103.5.47.20
+103.5.47.201
+103.5.47.202
+103.5.47.209
+103.5.47.210
+103.5.47.211
+103.5.47.212
+103.5.47.213
+103.5.47.214
+103.5.47.215
+103.5.47.216
+103.5.47.217
+103.5.47.219
+103.5.47.221
+103.5.47.222
+103.5.47.223
+103.5.47.224
+103.5.47.225
+103.5.47.226
+103.5.47.227
+103.5.47.228
+103.5.47.229
+103.5.47.23
+103.5.47.230
+103.5.47.231
+103.5.47.232
+103.5.47.233
+103.5.47.234
+103.5.47.235
+103.5.47.236
+103.5.47.238
+103.5.47.239
+103.5.47.240
+103.5.47.241
+103.5.47.242
+103.5.47.243
+103.5.47.244
+103.5.47.245
+103.5.47.246
+103.5.47.247
+103.5.47.248
+103.5.47.249
+103.5.47.25
+103.5.47.250
+103.5.47.251
+103.5.47.252
+103.5.47.27
+103.5.47.28
+103.5.47.29
+103.5.47.30
+103.5.47.32
+103.5.47.33
+103.5.47.34
+103.5.47.36
+103.5.47.39
+103.5.47.40
+103.5.47.42
+103.5.47.43
+103.5.47.44
+103.5.47.45
+103.5.47.46
+103.5.47.47
+103.5.47.48
+103.5.47.49
+103.5.47.50
+103.5.47.51
+103.5.47.52
+103.5.47.55
+103.5.47.56
+103.5.47.57
+103.5.47.58
+103.5.47.6
+103.5.47.60
+103.5.47.61
+103.5.47.62
+103.5.47.7
+103.5.47.76
+103.5.47.77
+103.5.47.79
+103.5.47.8
+103.5.47.80
+103.5.47.81
+103.5.47.82
+103.5.47.83
+103.5.47.84
+103.5.47.85
+103.5.47.86
+103.5.47.87
+103.5.47.88
+103.5.47.89
+103.5.47.9
+103.5.47.90
+103.5.47.91
+103.5.47.92
+103.5.47.93
+103.5.47.94
+103.5.47.95
+103.5.47.96
+103.5.47.97
+103.5.47.98
+103.5.47.99
+103.56.148.17
+103.56.148.201
+103.56.148.53
+103.57.191.103
+103.57.191.114
+103.57.191.117
+103.57.191.118
+103.57.191.120
+103.57.191.121
+103.57.191.122
+103.57.191.124
+103.57.191.133
+103.57.191.137
+103.57.191.144
+103.57.191.158
+103.57.191.159
+103.57.191.174
+103.57.191.176
+103.57.191.189
+103.57.191.199
+103.57.191.201
+103.57.191.209
+103.57.191.76
+103.57.191.89
+103.57.191.92
+103.57.191.95
+103.57.191.97
+103.57.191.99
+103.6.168.111
+103.6.168.113
+103.6.168.15
+103.6.168.179
+103.6.168.194
+103.6.168.60
+103.75.116.96
+103.75.117.54
+103.75.118.26
+103.82.240.148
+103.82.240.221
+103.82.241.189
+103.82.243.6
+103.9.100.247
+103.9.100.27
+103.9.100.50
+103.93.75.27
+104.131.117.183
+104.131.124.75
+104.131.177.51
+104.131.185.102
+104.131.34.83
+104.131.35.100
+104.131.35.223
+104.131.47.22
+104.131.72.69
+104.131.77.202
+104.131.77.203
+104.131.77.216
+104.145.231.244
+104.161.21.27
+104.161.21.28
+104.161.33.122
+104.161.33.124
+104.161.36.211
+104.161.36.212
+104.161.36.216
+104.161.66.43
+104.161.66.45
+104.168.111.220
+104.168.134.252
+104.168.135.13
+104.168.136.77
+104.168.137.45
+104.168.138.146
+104.168.139.125
+104.168.139.163
+104.168.139.194
+104.168.139.37
+104.168.145.23
+104.168.147.43
+104.168.147.89
+104.168.149.15
+104.168.152.107
+104.168.156.50
+104.168.159.188
+104.168.162.3
+104.168.162.36
+104.168.166.158
+104.168.167.214
+104.168.173.34
+104.168.202.3
+104.168.204.133
+104.168.21.168
+104.168.211.6
+104.168.214.250
+104.168.214.251
+104.168.214.254
+104.168.215.15
+104.168.215.17
+104.168.215.3
+104.168.24.151
+104.168.248.220
+104.168.251.111
+104.168.251.93
+104.171.112.118
+104.171.114.146
+104.200.17.200
+104.200.28.71
+104.207.130.199
+104.207.142.129
+104.217.253.153
+104.219.248.123
+104.219.248.150
+104.219.248.156
+104.219.248.159
+104.219.248.178
+104.219.248.211
+104.219.248.238
+104.219.248.245
+104.219.250.149
+104.219.250.214
+104.219.250.216
+104.219.250.67
+104.219.250.9
+104.219.250.91
+104.219.251.23
+104.219.251.5
+104.223.76.206
+104.223.76.45
+104.236.127.101
+104.236.143.12
+104.236.219.89
+104.236.237.13
+104.236.241.67
+104.236.27.198
+104.236.4.216
+104.236.40.196
+104.236.41.174
+104.236.56.159
+104.236.73.207
+104.236.87.38
+104.237.11.173
+104.237.13.45
+104.237.198.197
+104.238.149.2
+104.245.33.246
+104.245.33.56
+104.245.34.90
+104.245.35.100
+104.245.36.178
+104.245.36.31
+104.245.39.60
+104.248.10.250
+104.248.115.127
+104.248.121.89
+104.248.122.246
+104.248.123.119
+104.248.124.114
+104.248.126.235
+104.248.127.109
+104.248.144.234
+104.248.144.81
+104.248.144.94
+104.248.145.197
+104.248.145.233
+104.248.145.86
+104.248.146.242
+104.248.146.243
+104.248.146.57
+104.248.146.66
+104.248.146.99
+104.248.147.106
+104.248.147.116
+104.248.147.165
+104.248.147.194
+104.248.147.6
+104.248.147.70
+104.248.147.72
+104.248.147.82
+104.248.147.86
+104.248.148.1
+104.248.148.143
+104.248.148.169
+104.248.148.215
+104.248.148.239
+104.248.148.47
+104.248.148.74
+104.248.148.8
+104.248.148.9
+104.248.149.114
+104.248.149.144
+104.248.149.169
+104.248.149.2
+104.248.149.212
+104.248.149.216
+104.248.149.66
+104.248.150.149
+104.248.150.166
+104.248.150.17
+104.248.150.201
+104.248.150.97
+104.248.151.117
+104.248.151.192
+104.248.151.194
+104.248.151.212
+104.248.151.24
+104.248.152.145
+104.248.152.238
+104.248.152.242
+104.248.152.244
+104.248.152.29
+104.248.152.74
+104.248.152.75
+104.248.152.8
+104.248.152.89
+104.248.153.0
+104.248.153.120
+104.248.153.125
+104.248.153.157
+104.248.153.171
+104.248.153.199
+104.248.153.27
+104.248.154.184
+104.248.154.37
+104.248.154.55
+104.248.154.61
+104.248.154.9
+104.248.154.97
+104.248.155.154
+104.248.155.18
+104.248.155.209
+104.248.155.224
+104.248.155.228
+104.248.155.23
+104.248.155.49
+104.248.155.58
+104.248.155.67
+104.248.155.79
+104.248.156.108
+104.248.156.137
+104.248.156.143
+104.248.156.180
+104.248.156.24
+104.248.156.25
+104.248.157.104
+104.248.157.147
+104.248.157.191
+104.248.157.247
+104.248.157.25
+104.248.157.40
+104.248.157.45
+104.248.157.5
+104.248.157.69
+104.248.157.95
+104.248.158.155
+104.248.158.201
+104.248.158.50
+104.248.158.70
+104.248.159.0
+104.248.159.1
+104.248.159.107
+104.248.159.166
+104.248.159.245
+104.248.160.116
+104.248.162.200
+104.248.164.226
+104.248.168.187
+104.248.172.30
+104.248.19.65
+104.248.198.221
+104.248.205.5
+104.248.206.185
+104.248.224.249
+104.248.224.27
+104.248.227.226
+104.248.228.209
+104.248.230.182
+104.248.233.180
+104.248.236.229
+104.248.237.177
+104.248.241.116
+104.248.249.93
+104.248.251.44
+104.248.30.10
+104.248.46.80
+104.248.47.94
+104.248.50.15
+104.248.51.165
+104.248.51.31
+104.248.53.162
+104.248.54.195
+104.248.55.235
+104.248.59.149
+104.248.61.112
+104.248.61.141
+104.248.61.215
+104.248.62.229
+104.248.8.119
+104.248.92.176
+104.248.93.10
+104.248.96.106
+104.248.96.110
+104.248.96.126
+104.248.96.146
+104.248.96.183
+104.248.96.216
+104.248.96.228
+104.248.96.239
+104.248.96.24
+104.248.96.79
+104.248.96.90
+104.248.96.95
+104.248.97.101
+104.248.97.114
+104.248.97.135
+104.248.97.159
+104.248.97.170
+104.248.97.175
+104.248.97.194
+104.248.97.2
+104.248.97.21
+104.248.97.212
+104.248.97.215
+104.248.97.22
+104.248.97.222
+104.248.97.24
+104.248.97.25
+104.248.97.250
+104.248.97.38
+104.248.97.42
+104.248.97.74
+104.248.98.1
+104.248.98.101
+104.248.98.113
+104.248.98.134
+104.248.98.140
+104.248.98.189
+104.248.98.190
+104.248.98.206
+104.248.98.23
+104.248.98.30
+104.248.98.34
+104.248.98.4
+104.248.98.41
+104.248.98.85
+104.248.98.89
+104.248.99.117
+104.248.99.147
+104.248.99.161
+104.248.99.205
+104.248.99.242
+104.248.99.43
+107.152.32.118
+107.152.32.191
+107.152.32.45
+107.152.33.220
+107.152.33.98
+107.152.35.231
+107.152.35.62
+107.152.35.63
+107.152.36.10
+107.152.36.142
+107.152.36.45
+107.152.36.7
+107.152.37.154
+107.152.37.156
+107.152.37.237
+107.152.37.80
+107.152.37.81
+107.152.37.99
+107.152.39.149
+107.152.39.151
+107.152.39.2
+107.152.41.125
+107.152.41.209
+107.152.42.160
+107.152.43.205
+107.152.44.175
+107.152.44.199
+107.152.44.233
+107.152.45.135
+107.152.46.108
+107.152.46.123
+107.152.46.170
+107.152.47.105
+107.152.47.106
+107.152.47.197
+107.152.47.23
+107.152.47.40
+107.155.116.213
+107.155.116.217
+107.155.116.219
+107.155.116.220
+107.155.116.222
+107.155.116.224
+107.155.116.226
+107.161.20.48
+107.161.24.132
+107.161.24.140
+107.161.24.29
+107.161.26.105
+107.161.26.119
+107.161.26.122
+107.161.26.143
+107.161.26.146
+107.161.26.25
+107.172.2.138
+107.172.30.207
+107.172.86.210
+107.172.89.208
+107.173.15.30
+107.173.30.187
+107.174.136.212
+107.174.170.184
+107.174.192.165
+107.174.206.106
+107.174.64.207
+107.175.194.162
+107.175.196.107
+107.175.33.25
+107.175.36.113
+107.178.109.59
+107.178.109.62
+107.180.4.230
+107.180.53.69
+107.180.92.227
+107.189.28.36
+107.189.29.134
+107.189.29.224
+107.191.117.192
+107.191.41.92
+107.191.98.19
+107.191.98.226
+107.191.98.251
+108.136.160.232
+108.136.224.220
+108.136.227.108
+108.136.40.32
+108.136.41.232
+108.137.21.154
+108.160.129.144
+108.160.131.67
+108.160.138.248
+108.160.139.231
+108.160.149.227
+108.160.150.102
+108.160.150.115
+108.160.150.117
+108.160.150.120
+108.160.150.123
+108.160.150.15
+108.160.150.151
+108.160.156.96
+108.160.156.97
+108.160.157.11
+108.167.143.52
+108.170.8.154
+108.174.196.16
+108.179.214.61
+108.179.216.102
+108.179.216.104
+108.179.216.133
+108.179.216.243
+108.210.201.243
+108.61.161.37
+108.61.162.38
+108.61.192.91
+108.61.201.17
+108.61.212.158
+108.61.212.206
+109.106.255.102
+109.106.255.142
+109.106.255.74
+109.106.255.82
+109.106.255.98
+109.205.178.159
+110.4.47.161
+110.50.228.52
+110.50.231.15
+111.90.146.236
+111.90.150.155
+111.90.150.185
+111.90.150.211
+111.90.150.33
+111.90.150.47
+111.90.150.87
+111.90.151.68
+111.90.151.74
+112.140.184.153
+112.140.184.172
+112.140.184.173
+112.140.184.181
+112.140.185.109
+112.140.185.117
+112.140.185.132
+112.140.185.174
+112.140.185.7
+112.140.185.8
+112.140.185.87
+112.140.185.91
+112.140.185.93
+112.140.185.97
+112.140.186.51
+112.140.186.56
+112.140.186.63
+112.140.186.65
+112.140.186.66
+112.140.186.67
+112.140.186.68
+112.140.186.71
+112.140.186.76
+112.140.186.81
+112.140.186.87
+112.140.186.92
+112.140.186.97
+112.140.186.99
+112.140.187.113
+112.140.187.116
+112.140.187.117
+112.140.187.120
+112.140.187.125
+112.140.187.51
+112.140.187.62
+112.140.187.66
+112.140.187.67
+112.140.187.73
+112.140.187.78
+112.140.187.84
+112.140.187.90
+112.140.187.95
+112.140.187.98
+112.140.187.99
+113.130.125.210
+113.130.125.211
+113.130.125.227
+113.130.125.228
+113.130.125.232
+113.130.125.234
+113.130.125.235
+113.23.196.237
+115.29.142.79
+116.203.111.29
+116.203.132.113
+116.203.148.145
+116.203.150.150
+116.203.154.227
+116.203.200.231
+116.203.224.171
+116.203.234.232
+116.203.26.221
+116.203.40.69
+116.203.57.134
+116.203.58.228
+116.203.71.36
+116.203.83.108
+116.203.96.246
+117.53.155.23
+118.107.232.139
+118.107.232.151
+118.107.232.33
+118.107.238.101
+118.107.238.46
+118.107.238.49
+118.107.238.54
+118.107.238.57
+118.107.238.62
+118.107.238.64
+118.107.238.67
+118.107.238.69
+118.107.238.70
+118.107.238.73
+118.107.238.76
+118.107.238.78
+118.107.238.80
+118.107.238.82
+118.107.238.88
+118.107.238.94
+118.107.238.97
+118.107.238.98
+118.107.35.100
+118.107.35.101
+118.107.35.102
+118.107.35.104
+118.107.35.105
+118.107.35.106
+118.107.35.107
+118.107.35.108
+118.107.35.109
+118.107.35.110
+118.107.35.112
+118.107.35.113
+118.107.35.116
+118.107.35.117
+118.107.35.118
+118.107.35.119
+118.107.35.122
+118.107.35.123
+118.107.35.124
+118.107.35.125
+118.107.35.126
+118.107.35.98
+118.107.35.99
+119.81.158.166
+119.81.158.175
+119.81.220.103
+119.81.70.14
+12.213.154.177
+122.248.196.118
+122.248.196.61
+122.248.200.182
+122.248.201.61
+122.248.203.117
+122.248.203.146
+122.248.203.253
+122.248.206.56
+122.248.208.241
+122.248.215.112
+122.248.222.34
+122.248.224.60
+122.248.225.189
+122.248.226.208
+122.248.226.80
+122.248.231.201
+122.248.233.171
+122.248.234.95
+122.248.243.215
+122.248.246.129
+124.248.221.99
+125.253.93.38
+128.199.100.112
+128.199.100.169
+128.199.100.181
+128.199.100.200
+128.199.100.8
+128.199.100.93
+128.199.101.103
+128.199.101.104
+128.199.101.116
+128.199.101.126
+128.199.101.169
+128.199.101.189
+128.199.101.201
+128.199.101.209
+128.199.101.214
+128.199.101.233
+128.199.101.40
+128.199.101.54
+128.199.101.62
+128.199.102.113
+128.199.102.210
+128.199.102.225
+128.199.102.240
+128.199.102.34
+128.199.102.48
+128.199.102.94
+128.199.103.104
+128.199.103.115
+128.199.103.125
+128.199.103.179
+128.199.103.188
+128.199.103.218
+128.199.103.227
+128.199.103.242
+128.199.103.26
+128.199.103.66
+128.199.104.100
+128.199.104.103
+128.199.104.185
+128.199.104.239
+128.199.104.243
+128.199.104.5
+128.199.104.65
+128.199.104.67
+128.199.104.91
+128.199.105.13
 128.199.105.163
 128.199.105.230
 128.199.105.249
@@ -73695,7 +74422,6 @@ $(document).ready(function(){
 104.21.91.193
 104.21.93.102
 104.21.93.28
-104.21.95.104
 104.21.95.59
 104.22.66.121
 104.237.140.15
@@ -74164,7 +74890,6 @@ $(document).ready(function(){
 172.67.143.87
 172.67.144.167
 172.67.144.253
-172.67.144.74
 172.67.146.232
 172.67.146.80
 172.67.147.88
@@ -88676,29 +89401,6 @@ $(document).ready(function(){
 157.230.0.171
 158.247.232.49
 159.89.200.212
-160.187.210.830.249.29
-157.230.254.37
-167.99.77.11
-178.128.30.123
-37.221.66.218
-54.179.107.66
-2.56.10.87
-82.197.70.22
-45.11.57.6
-188.166.247.65
-152.42.234.233
-142.93.211.196
-159.223.94.149
-178.128.58.64
-152.42.224.94
-143.198.192.228
-85.239.33.127
-103.3.63.212
-137.184.77.212
-15.235.221.150
-157.230.0.171
-158.247.232.49
-159.89.200.212
 160.187.210.84
 165.227.88.34
 178.128.95.214
@@ -90933,7 +91635,9 @@ $(document).ready(function(){
 128.199.199.104
 128.199.83.102
 128.199.94.213
-13.212.1179.66
+13.212.117.209
+13.214.65.243
+13.250.129.66
 13.251.2.9
 137.184.248.146
 139.180.222.115
@@ -96021,3 +96725,32 @@ $(document).ready(function(){
 178.128.19.26
 188.166.250.27
 64.225.84.24
+139.59.77.218
+159.223.43.199
+188.166.239.19
+213.199.60.162
+18.143.111.69
+103.150.196.25
+128.199.101.248
+128.199.148.226
+128.199.160.88
+128.199.226.215
+128.199.248.17
+134.209.108.49
+157.230.252.197
+157.230.42.199
+157.245.145.175
+157.245.154.122
+157.245.193.43
+157.245.196.190
+157.245.203.204
+159.223.63.172
+159.223.64.48
+167.172.77.133
+167.172.92.162
+167.71.215.104
+178.128.100.212
+178.128.211.112
+178.128.60.53
+178.128.95.182
+188.166.230.210
